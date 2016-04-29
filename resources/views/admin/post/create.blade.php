@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="published_at" class="form-label">Date de publication</label>
-                <input type="date" name="published_at" id="published_at" class="form-control">
+                <input type="date" name="published_at" id="published_at" class="form-control" value="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
                 @if($errors->has('published_at')) <span class="error">{{ $errors->first('published_at') }}</span> @endif
             </div>
             
