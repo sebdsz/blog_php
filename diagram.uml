@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>c2aeea8e-5282-462d-8ef6-b34dd14375de</OriginalElement>
+  <nodes>
+    <node x="125.0" y="274.0">c2aeea8e-5282-462d-8ef6-b34dd14375de.TABLE:db_blogphp.posts</node>
+    <node x="590.0" y="597.0">c2aeea8e-5282-462d-8ef6-b34dd14375de.TABLE:db_blogphp.password_resets</node>
+    <node x="0.0" y="0.0">c2aeea8e-5282-462d-8ef6-b34dd14375de.TABLE:db_blogphp.users</node>
+    <node x="305.0" y="597.0">c2aeea8e-5282-462d-8ef6-b34dd14375de.TABLE:db_blogphp.tags</node>
+    <node x="0.0" y="812.0">c2aeea8e-5282-462d-8ef6-b34dd14375de.TABLE:db_blogphp.post_tag</node>
+    <node x="320.0" y="40.5">c2aeea8e-5282-462d-8ef6-b34dd14375de.TABLE:db_blogphp.categories</node>
+    <node x="282.0" y="812.0">c2aeea8e-5282-462d-8ef6-b34dd14375de.TABLE:db_blogphp.migrations</node>
+    <node x="605.0" y="0.0">c2aeea8e-5282-462d-8ef6-b34dd14375de.TABLE:db_blogphp.pictures</node>
+    <node x="0.0" y="597.0">c2aeea8e-5282-462d-8ef6-b34dd14375de.TABLE:db_blogphp.scores</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="c2aeea8e-5282-462d-8ef6-b34dd14375de.TABLE:db_blogphp.posts" target="c2aeea8e-5282-462d-8ef6-b34dd14375de.TABLE:db_blogphp.categories">
+      <point x="85.0" y="-139.0" />
+      <point x="380.0" y="249.0" />
+      <point x="440.0" y="249.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="c2aeea8e-5282-462d-8ef6-b34dd14375de.TABLE:db_blogphp.posts" target="c2aeea8e-5282-462d-8ef6-b34dd14375de.TABLE:db_blogphp.users">
+      <point x="-85.0" y="-139.0" />
+      <point x="210.0" y="249.0" />
+      <point x="150.0" y="249.0" />
+      <point x="0.0" y="112.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7923913043478261" x="483.5706447187929" y="470.0521262002743" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+
