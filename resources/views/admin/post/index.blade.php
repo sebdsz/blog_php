@@ -65,7 +65,7 @@
                                 @endif
                             </td>
                             <td>
-                                <a class="btn btn-warning"
+                                <a class="btn btn-danger"
                                    href="{{ action('PostController@published', $post) }}">{{ $post->status === 'published' ? 'Unpublished' : 'Published' }}</a>
                             </td>
                             <td>
