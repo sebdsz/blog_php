@@ -21,7 +21,7 @@ class ScoreEvent extends Event
     public function __construct($postId, $score)
     {
         $this->postId = $postId;
-        j8888->score = $score;
+        $this->score = $score;
     }
 
     /**
