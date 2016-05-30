@@ -65,9 +65,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        if (Gate::denies('show', $post)) {
-            abort(403, 'Sorry');
-        }
+        abort(404, 'Sorry');
     }
 
     /**
@@ -80,9 +78,8 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
-        /*if (Gate::denies('show', $post)) {
+        if (Gate::denies('update', $post))
             abort(403, 'Sorry');
-        }*/
 
         return view('admin.post.edit', compact('post'));
     }
@@ -118,8 +115,11 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
-        $title = $post->title;
 
+        if (Gate::denies('delete', $post))
+            abort(403, 'Sorry');
+
+        $title = $post->title;
         $post->delete();
 
         return back()->with(['message' => sprintf('success delete ressource %s', $title)]);

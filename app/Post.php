@@ -15,12 +15,6 @@ class Post extends Model
 
     protected $dates = ['published_at'];
 
-    public function setUserId()
-    {
-        $this->user_id = Auth::user()->id;
-        $this->save();
-    }
-
     /**
      * @param int $length
      * @return string
@@ -102,18 +96,16 @@ class Post extends Model
         return $query->where('category_id', '=', $id);
     }
 
-    /**
-     * @param $value
-     */
     public function setCategoryIdAttribute($value)
     {
         $this->attributes['category_id'] = ($value == 0) ? NULL : $value;
     }
 
-    /**
-     * @param $id
-     * @return bool
-     */
+    public function setUserId()
+    {
+        $this->user_id = Auth::user()->id;
+    }
+
     public function hasTag($id)
     {
         if (is_null($this->tags)) return false;

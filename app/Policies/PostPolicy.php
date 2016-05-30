@@ -30,9 +30,9 @@ class PostPolicy
         return ($user->role === 'administrator' || $user->id === $post->user_id);
     }
 
-    public function show(User $user, Post $post)
+    public function delete(User $user, Post $post)
     {
-        return ($user->id === $post->user_id || $user->role === 'administrator');
+        return ($user->role === 'administrator' || $user->id === $post->user_id);
     }
 
     public function rate(User $user, Post $post)

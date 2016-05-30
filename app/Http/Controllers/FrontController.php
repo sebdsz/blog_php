@@ -35,7 +35,7 @@ class FrontController extends Controller
 
         $posts = Post::with('category', 'user', 'tags', 'picture')->published()->paginate(10);
 
-        $single = Post::findOrFail($id);
+        $single = Post::published()->findOrFail($id);
 
         $total = $single->averageScore();
 
