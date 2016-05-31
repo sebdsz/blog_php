@@ -27,7 +27,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('article/{id}', 'FrontController@show');
     Route::get('categorie/{id?}', 'FrontController@showPostByCat');
     Route::post('article/{post}/score', 'FrontController@setScorePost');
-//    Route::get('user/{id}/posts', 'FrontController@showPostByUser');
 
     Route::group(['middleware' => ['auth.admin']], function() {
         route::resource('dashboard', 'PostController');

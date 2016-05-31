@@ -2,15 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Providers\AppServiceProvider;
-use Illuminate\Http\Request;
-
 use Auth;
 use Gate;
-use Illuminate\Support\Facades\App;
 use View;
 use Cache;
-use App\User;
 use App\Post;
 use App\Score;
 use App\Category;
@@ -22,9 +17,7 @@ class FrontController extends Controller
 
     public function index()
     {
-
         $posts = Post::with('category', 'user', 'tags', 'picture')->published()->paginate(10);
-
         $title = "Blog PHP - Laravel";
 
         return view('front.index', compact('posts', 'title'));
@@ -32,13 +25,9 @@ class FrontController extends Controller
 
     public function show($id)
     {
-
         $posts = Post::with('category', 'user', 'tags', 'picture')->published()->paginate(10);
-
         $single = Post::published()->findOrFail($id);
-
         $total = $single->averageScore();
-
         $title = 'Blog PHP - Publication - ' . $single->title;
 
         return view('front.single', compact('posts', 'single', 'title', 'total'));
@@ -59,16 +48,6 @@ class FrontController extends Controller
 
         return view('front.category', compact('category', 'title', 'posts'));
     }
-
-    /*public function showPostByUser($id)
-    {
-
-        $user = User::findOrFail($id);
-        $posts = User::find($id)->posts;
-        $title = $user->name;
-
-        return view('front.showPostByUser', compact('posts', 'title', 'user'));
-    }*/
 
     public function setScorePost(ScoreRequest $request, Post $post)
     {
