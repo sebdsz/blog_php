@@ -89,7 +89,7 @@ class Post extends Model
 
     public function date()
     {
-        return $this->published_at->formatLocalized('%A %d %B %Y à %Hh%M');
+        return $this->published_at->formatLocalized('%A %d %B %Y');
     }
 
     public function setCategoryIdAttribute($value)
