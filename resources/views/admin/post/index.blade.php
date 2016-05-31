@@ -34,9 +34,7 @@
                             <td>{{ $post->user_id ? $post->user->name : 'Aucun auteur' }}</td>
                             <td><a href="{{ action('PostController@edit', $post->id)}}">{{ $post->title }}</a></td>
                             <td>
-                                @if($post->published_at->format('m-d-Y') !== '11-30--0001')
-                                    {{ $post->published_at->format('m-d-Y') }}
-                                @endif
+                                    {{ $post->published_at }}
                             </td>
                             <td>
                                 @if($post->picture)
