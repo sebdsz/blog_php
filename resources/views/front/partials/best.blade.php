@@ -8,7 +8,7 @@
 
             @if($author = $bestPost->user)
                 <p class="author">Écrit par {{ $bestPost->user->name }}
-                    le {{ $bestPost->published_at }}</p>
+                    le {{ $bestPost->date() }}</p>
             @endif
 
             @if($category = $bestPost->category)

@@ -87,12 +87,9 @@ class Post extends Model
         return $query->where('category_id', '=', $id);
     }
 
-    public function getPublishedAtAttribute($date)
+    public function date()
     {
-        setlocale(LC_TIME, 'fr');
-        // return Carbon::parse($date)->formatLocalized('%A %d %B %Y à %Hh%M');
-        return Carbon::parse($date);
-
+        return $this->published_at->formatLocalized('%A %d %B %Y à %Hh%M');
     }
 
     public function setCategoryIdAttribute($value)

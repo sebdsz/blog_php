@@ -10,7 +10,7 @@
 
         @if($author = $post->user)
             <p class="author">Écrit par {{ $post->user->name }}
-                le {{ $post->published_at }}</p>
+                le {{ $post->date() }}</p>
         @endif
 
         @if($category = $post->category)

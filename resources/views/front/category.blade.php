@@ -35,7 +35,7 @@
                         </ul>
                     @endif
 
-                    <p class="italic">Crée le {{ $post->published_at }}</p>
+                    <p class="italic">Crée le {{ $post->date() }}</p>
 
                     @if($picture = $post->picture)
                         <div class="picture">

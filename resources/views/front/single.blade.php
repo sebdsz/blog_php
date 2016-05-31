@@ -30,7 +30,7 @@
                     </ul>
                 @endif
 
-                <p class="italic">Crée le {{ $single->published_at }}</p>
+                <p class="italic">Crée le {{ $single->date() }}</p>
 
                 @if($picture = $single->picture)
                     <div class="picture">
