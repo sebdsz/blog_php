@@ -90,7 +90,9 @@ class Post extends Model
     public function getPublishedAtAttribute($date)
     {
         setlocale(LC_TIME, 'fr');
-        return Carbon::parse($date)->formatLocalized('%A %d %B %Y à %Hh%M');
+        // return Carbon::parse($date)->formatLocalized('%A %d %B %Y à %Hh%M');
+        return Carbon::parse($date);
+
     }
 
     public function setCategoryIdAttribute($value)
@@ -98,7 +100,7 @@ class Post extends Model
         $this->attributes['category_id'] = ($value == 0) ? NULL : $value;
     }
 
-    public function setUserId()
+    public function setUserIdAttribute()
     {
         $this->user_id = Auth::user()->id;
     }
