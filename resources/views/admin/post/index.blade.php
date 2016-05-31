@@ -34,7 +34,7 @@
                             <td>{{ $post->user_id ? $post->user->name : 'Aucun auteur' }}</td>
                             <td><a href="{{ action('PostController@edit', $post->id)}}">{{ $post->title }}</a></td>
                             <td>
-                                {{ $post->published_at->format('d-m-Y') }}
+                                {{ $post->date() }}
                             </td>
                             <td>
                                 @if($post->picture)
