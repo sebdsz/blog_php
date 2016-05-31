@@ -8,7 +8,7 @@
 
             @if($author = $bestPost->user)
                 <p class="author">Écrit par {{ $bestPost->user->name }}
-                    le {{ $bestPost->published_at->formatLocalized('%A %d %B %Y à %Hh%M') }}</p>
+                    le {{ $bestPost->published_at }}</p>
             @endif
 
             @if($category = $bestPost->category)

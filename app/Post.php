@@ -25,15 +25,6 @@ class Post extends Model
     }
 
     /**
-     * @return string
-     */
-    public function date()
-    {
-        setlocale(LC_TIME, 'fr');
-        return Carbon::parse($this->published_at)->formatLocalized('%A %d %B %Y à %Hh%M');
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
@@ -94,6 +85,12 @@ class Post extends Model
     public function scopeCategory($query, $id)
     {
         return $query->where('category_id', '=', $id);
+    }
+
+    public function getPublishedAtAttribute($date)
+    {
+        setlocale(LC_TIME, 'fr');
+        return Carbon::parse($date)->formatLocalized('%A %d %B %Y à %Hh%M');
     }
 
     public function setCategoryIdAttribute($value)
